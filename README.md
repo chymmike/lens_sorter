@@ -115,5 +115,6 @@ A: 程式會自動偵測檔名衝突。如果檔案已存在，新檔案會自�
 
 ## 👤 作者
 
-**chymmike**
+**Mike Chen**
+- Website: [chymmike.com](https://chymmike.com)
 - GitHub: [@chymmike](https://github.com/chymmike)
