@@ -1,0 +1,38 @@
+# System
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+
+# Project specific logs and indexes
+organize.log
+_index.json
+
+# Directories to ignore
+_inbox/
+thumbnails/
+
+# Media files (Prevent accidentally committing personal photos/videos)
+*.JPG
+*.jpg
+*.JPEG
+*.jpeg
+*.MP4
+*.mp4
+*.MOV
+*.mov
+*.ARW
+*.arw
+*.XML
+*.xml
+
+# Ignore output year directories if generated in root (e.g. 2024/, 2025/)
+20[0-9][0-9]/
