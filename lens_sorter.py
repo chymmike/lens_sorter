@@ -158,8 +158,9 @@ class PhotoOrganizer:
                 return None
             
             # 解析日期時間 (格式: "2025:02:26 07:41:04" 或帶時區)
-            # 移除可能的時區資訊
-            datetime_str = datetime_str.split('+')[0].split('-')[0] if '+' in datetime_str or datetime_str.count('-') > 2 else datetime_str.replace(':', '-', 2)
+            # 用 regex 移除時區後綴 (如 +08:00 或 -05:00)
+            import re
+            datetime_str = re.sub(r'[+-]\d{2}:\d{2}$', '', datetime_str.strip())
             
             # 嘗試解析
             try:
@@ -704,6 +705,10 @@ def main():
         print(f"❌ 錯誤: 輸入資料夾不存在: {args.input}")
         print(f"   請先建立資料夾並放入要整理的照片")
         sys.exit(1)
+            
+    # 確保輸出目錄存在
+    if not args.output.exists():
+        args.output.mkdir(parents=True, exist_ok=True)
     
     # 初始化 logger
     log_file = args.output / 'organize.log'
